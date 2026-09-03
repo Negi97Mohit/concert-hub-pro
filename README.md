@@ -21,23 +21,42 @@ when the admin tries to add a new value they see the input field on the way to t
 
 allow user to rearrange images using drag to change the order, give a perviwe of all the sections, so that they can get a live feed of how it will look
 
-This project was built with [Lovable](https://lovable.dev).
-
-## Build with Lovable
-
-Continue developing this project in the [Lovable editor](https://lovable.dev/projects/c5644619-0869-4e8b-af10-2e5b537116c4).
-
-- **Ship faster**: describe what you want to build and Lovable handles the code.
-- **Stay in sync**: every change made in Lovable is committed straight to this repository.
-- **Full ownership**: this code is yours. Push to `main` on GitHub and your changes sync back into Lovable, ready for your next prompt.
-
 ## Development
 
 Prefer working locally? You need Node.js and npm — [install with nvm](https://github.com/nvm-sh/nvm#installing-and-updating).
 
 ```sh
-git clone <this-repository-url>
-cd <repository-name>
-npm i
+# Install dependencies
+npm install
+
+# Start local development server
 npm run dev
+
+# Build for production
+npm run build
 ```
+
+## Netlify Deployment
+
+1. **Push to GitHub / GitLab / Bitbucket**:
+   Ensure all changes are committed and pushed to your git repository.
+
+2. **Connect to Netlify**:
+   - Go to [Netlify](https://app.netlify.com/) and click **Add new site** > **Import an existing project**.
+   - Select your Git provider and choose this repository.
+
+3. **Configure Build Settings**:
+   - **Build command**: `npm run build`
+   - **Publish directory**: `dist/client`
+   - **Functions directory**: `.netlify/functions-internal` (auto-configured via Nitro/netlify.toml)
+
+4. **Environment Variables**:
+   Add the following in your Netlify site settings (**Site configuration** > **Environment variables**):
+   - `VITE_SUPABASE_URL`: Your Supabase project URL
+   - `VITE_SUPABASE_PUBLISHABLE_KEY`: Your Supabase anon/publishable key
+   - `SUPABASE_URL`: Your Supabase project URL
+   - `SUPABASE_SERVICE_ROLE_KEY`: Your Supabase service role key (for server actions/admin)
+   - `ADMIN_USERNAME`: Admin login username
+   - `ADMIN_PASSWORD`: Admin login password
+   - `ADMIN_COOKIE_SECRET`: A secure random 32+ character string for signing session cookies
+

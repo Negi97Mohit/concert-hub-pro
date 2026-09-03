@@ -1,10 +1,9 @@
-<!-- LOVABLE:BEGIN -->
-> [!IMPORTANT]
-> This project is connected to [Lovable](https://lovable.dev). Avoid rewriting
-> published git history — force pushing, or rebasing/amending/squashing commits
-> that are already pushed — as it rewrites history on Lovable's side and the
-> user will likely lose their project history.
->
-> Commits you push to the connected branch sync back to Lovable and show up in
-> the editor, so keep the branch in a working state.
-<!-- LOVABLE:END -->
+# Concert Hub Pro - Agent Guidelines
+
+This repository is an independent web application for pianist Alexandra Dovgan built with TanStack Start, React 19, Vite, Tailwind CSS, and Supabase.
+
+### Conventions
+- Preserve clean separation between client components and server functions.
+- Keep admin features protected by authentication.
+- Follow existing Tailwind CSS styling conventions and responsive designs.
+

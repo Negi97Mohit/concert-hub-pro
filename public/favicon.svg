@@ -1,30 +1,94 @@
-﻿<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128" width="128" height="128">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128" width="128" height="128">
   <defs>
     <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
-      <stop offset="0%" stop-color="#181816"/>
-      <stop offset="100%" stop-color="#0a0a09"/>
+      <stop offset="0%" stop-color="#141312"/>
+      <stop offset="100%" stop-color="#080707"/>
     </linearGradient>
     <linearGradient id="gold" x1="0%" y1="0%" x2="100%" y2="100%">
-      <stop offset="0%" stop-color="#f5efe6"/>
-      <stop offset="50%" stop-color="#d8c5ab"/>
-      <stop offset="100%" stop-color="#b09267"/>
+      <stop offset="0%" stop-color="#fff1db"/>
+      <stop offset="45%" stop-color="#e2ba72"/>
+      <stop offset="100%" stop-color="#b6893e"/>
+    </linearGradient>
+    <linearGradient id="goldLid" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#ffe8c2"/>
+      <stop offset="100%" stop-color="#c99b4d"/>
+    </linearGradient>
+    <linearGradient id="accent" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#d4af37" stop-opacity="0.8"/>
+      <stop offset="100%" stop-color="#b6893e" stop-opacity="0.3"/>
     </linearGradient>
   </defs>
+
+  <!-- Base background with rounded corners and elegant border -->
   <rect width="128" height="128" rx="28" fill="url(#bg)"/>
-  <rect x="2" y="2" width="124" height="124" rx="26" fill="none" stroke="#2e2b25" stroke-width="1.5"/>
-  
-  <g transform="translate(18, 22)">
-    <!-- Grand piano curve & keyboard silhouette combined with classical 'A' & 'D' -->
-    <path d="M 12 70 L 32 18 L 40 18 L 60 70 L 50 70 L 44 54 L 27 54 L 22 70 Z M 30 46 L 41 46 L 36 28 Z" fill="url(#gold)"/>
-    <path d="M 44 18 L 62 18 C 76 18 86 28 86 44 C 86 60 76 70 62 70 L 44 70 L 44 62 L 60 62 C 70 62 76 53 76 44 C 76 33 70 26 60 26 L 44 26 Z" fill="url(#gold)"/>
-    
-    <!-- Piano keys line at bottom -->
-    <rect x="12" y="78" width="8" height="6" rx="1" fill="url(#gold)" opacity="0.85"/>
-    <rect x="22" y="78" width="8" height="6" rx="1" fill="url(#gold)" opacity="0.85"/>
-    <rect x="32" y="78" width="8" height="6" rx="1" fill="url(#gold)" opacity="0.85"/>
-    <rect x="42" y="78" width="8" height="6" rx="1" fill="url(#gold)" opacity="0.85"/>
-    <rect x="52" y="78" width="8" height="6" rx="1" fill="url(#gold)" opacity="0.85"/>
-    <rect x="62" y="78" width="8" height="6" rx="1" fill="url(#gold)" opacity="0.85"/>
-    <rect x="72" y="78" width="8" height="6" rx="1" fill="url(#gold)" opacity="0.85"/>
+  <rect x="2" y="2" width="124" height="124" rx="26" fill="none" stroke="#2e271c" stroke-width="1.5"/>
+  <rect x="6" y="6" width="116" height="116" rx="22" fill="none" stroke="#d4af37" stroke-width="0.5" stroke-opacity="0.25"/>
+
+  <!-- Grand Piano Silhouette with Open Lid -->
+  <g id="piano">
+    <!-- Open Lid raised with prop -->
+    <!-- Lid leaf angled up -->
+    <polygon points="34,60 52,22 96,28 78,63" fill="url(#goldLid)" opacity="0.95"/>
+    <!-- Lid prop stick -->
+    <line x1="68" y1="42" x2="65" y2="64" stroke="#fff1db" stroke-width="2" stroke-linecap="round"/>
+
+    <!-- Grand Piano Rim / Body -->
+    <!-- Curves gracefully around the soundboard from tail to treble side -->
+    <path d="M 32 63 
+             L 86 63 
+             C 89 63, 92 65, 93 68
+             C 95 72, 93 78, 88 81
+             C 81 85, 76 89, 74 95
+             L 32 95
+             C 30 95, 29 93, 29 91
+             L 29 66
+             C 29 64, 30 63, 32 63 Z" 
+          fill="url(#gold)"/>
+
+    <!-- Soundboard / inner rim depth shadow -->
+    <path d="M 35 66 
+             L 83 66 
+             C 86 66, 88 68, 88 71
+             C 88 75, 84 78, 80 81
+             C 74 85, 71 88, 69 92
+             L 35 92 Z" 
+          fill="#1c1915" opacity="0.9"/>
+
+    <!-- Piano harp / strings golden accent lines inside body -->
+    <path d="M 40 70 Q 56 70 66 76" stroke="url(#accent)" stroke-width="1.5" fill="none"/>
+    <path d="M 40 75 Q 54 75 62 80" stroke="url(#accent)" stroke-width="1.5" fill="none"/>
+    <path d="M 40 80 Q 50 80 57 84" stroke="url(#accent)" stroke-width="1.5" fill="none"/>
+    <path d="M 40 85 Q 46 85 52 88" stroke="url(#accent)" stroke-width="1.5" fill="none"/>
+
+    <!-- Front Keyboard Bed (White & Black keys) -->
+    <!-- White key bed -->
+    <rect x="30" y="96" width="46" height="10" rx="1.5" fill="#fdfbf7"/>
+
+    <!-- Individual key separators and black keys -->
+    <!-- Subtle vertical lines for white keys -->
+    <line x1="36" y1="96" x2="36" y2="106" stroke="#c4b8a5" stroke-width="0.75"/>
+    <line x1="42" y1="96" x2="42" y2="106" stroke="#c4b8a5" stroke-width="0.75"/>
+    <line x1="48" y1="96" x2="48" y2="106" stroke="#c4b8a5" stroke-width="0.75"/>
+    <line x1="54" y1="96" x2="54" y2="106" stroke="#c4b8a5" stroke-width="0.75"/>
+    <line x1="60" y1="96" x2="60" y2="106" stroke="#c4b8a5" stroke-width="0.75"/>
+    <line x1="66" y1="96" x2="66" y2="106" stroke="#c4b8a5" stroke-width="0.75"/>
+    <line x1="72" y1="96" x2="72" y2="106" stroke="#c4b8a5" stroke-width="0.75"/>
+
+    <!-- Black keys -->
+    <rect x="34" y="96" width="3" height="6" rx="0.5" fill="#141312"/>
+    <rect x="39" y="96" width="3" height="6" rx="0.5" fill="#141312"/>
+    <rect x="47" y="96" width="3" height="6" rx="0.5" fill="#141312"/>
+    <rect x="52" y="96" width="3" height="6" rx="0.5" fill="#141312"/>
+    <rect x="57" y="96" width="3" height="6" rx="0.5" fill="#141312"/>
+    <rect x="65" y="96" width="3" height="6" rx="0.5" fill="#141312"/>
+    <rect x="70" y="96" width="3" height="6" rx="0.5" fill="#141312"/>
+
+    <!-- Piano legs -->
+    <rect x="33" y="107" width="3" height="7" rx="1" fill="url(#gold)"/>
+    <rect x="71" y="107" width="3" height="7" rx="1" fill="url(#gold)"/>
+    <rect x="80" y="82" width="3" height="24" rx="1" fill="url(#gold)"/>
+    <!-- Lyre with pedals -->
+    <rect x="52" y="106" width="2" height="6" fill="url(#gold)"/>
+    <rect x="50" y="111" width="6" height="2" rx="0.5" fill="url(#gold)"/>
   </g>
 </svg>
