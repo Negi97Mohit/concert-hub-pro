@@ -158,9 +158,13 @@ function AdminPage() {
           onSubmit={async (e) => {
             e.preventDefault();
             setError("");
-            const res = await login({ data: { username, password } });
-            if (res.ok) setAuthed(true);
-            else setError("Incorrect username or password.");
+            try {
+              const res = await login({ data: { username, password } });
+              if (res.ok) setAuthed(true);
+              else setError("Incorrect username or password.");
+            } catch (err) {
+              setError(err instanceof Error ? err.message : "Login failed. Please verify admin credentials.");
+            }
           }}
         >
           <Link
