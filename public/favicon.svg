@@ -1,0 +1,30 @@
+﻿<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128" width="128" height="128">
+  <defs>
+    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#181816"/>
+      <stop offset="100%" stop-color="#0a0a09"/>
+    </linearGradient>
+    <linearGradient id="gold" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#f5efe6"/>
+      <stop offset="50%" stop-color="#d8c5ab"/>
+      <stop offset="100%" stop-color="#b09267"/>
+    </linearGradient>
+  </defs>
+  <rect width="128" height="128" rx="28" fill="url(#bg)"/>
+  <rect x="2" y="2" width="124" height="124" rx="26" fill="none" stroke="#2e2b25" stroke-width="1.5"/>
+  
+  <g transform="translate(18, 22)">
+    <!-- Grand piano curve & keyboard silhouette combined with classical 'A' & 'D' -->
+    <path d="M 12 70 L 32 18 L 40 18 L 60 70 L 50 70 L 44 54 L 27 54 L 22 70 Z M 30 46 L 41 46 L 36 28 Z" fill="url(#gold)"/>
+    <path d="M 44 18 L 62 18 C 76 18 86 28 86 44 C 86 60 76 70 62 70 L 44 70 L 44 62 L 60 62 C 70 62 76 53 76 44 C 76 33 70 26 60 26 L 44 26 Z" fill="url(#gold)"/>
+    
+    <!-- Piano keys line at bottom -->
+    <rect x="12" y="78" width="8" height="6" rx="1" fill="url(#gold)" opacity="0.85"/>
+    <rect x="22" y="78" width="8" height="6" rx="1" fill="url(#gold)" opacity="0.85"/>
+    <rect x="32" y="78" width="8" height="6" rx="1" fill="url(#gold)" opacity="0.85"/>
+    <rect x="42" y="78" width="8" height="6" rx="1" fill="url(#gold)" opacity="0.85"/>
+    <rect x="52" y="78" width="8" height="6" rx="1" fill="url(#gold)" opacity="0.85"/>
+    <rect x="62" y="78" width="8" height="6" rx="1" fill="url(#gold)" opacity="0.85"/>
+    <rect x="72" y="78" width="8" height="6" rx="1" fill="url(#gold)" opacity="0.85"/>
+  </g>
+</svg>
