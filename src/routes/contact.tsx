@@ -1,6 +1,5 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { PageHeading, SiteFooter, SiteHeader } from "@/components/SiteChrome";
-import { CONTACTS } from "@/data/dovgan";
 import { useSiteContent } from "@/hooks/useSiteContent";
 
 export const Route = createFileRoute("/contact")({
@@ -29,7 +28,8 @@ const line = "text-base leading-relaxed text-muted-foreground";
 const link = "text-primary transition-opacity hover:opacity-70";
 
 function Contact() {
-  const g = CONTACTS.general;
+  const { contacts } = useSiteContent();
+  const g = contacts.general;
 
   return (
     <div className="min-h-screen">
@@ -73,7 +73,7 @@ function Contact() {
         </section>
 
         <section className="space-y-12">
-          {CONTACTS.locals.map((c) => (
+          {contacts.locals.map((c) => (
             <div key={c.email} className="border-t border-border pt-8">
               <p className="eyebrow">{c.role}</p>
               <h2 className="mt-4 font-display text-3xl text-foreground md:text-4xl">{c.name}</h2>
