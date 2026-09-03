@@ -1,5 +1,5 @@
 import { createServerFn } from "@tanstack/react-start";
-import { useSession } from "@tanstack/react-start/server";
+import { getRequestUrl, useSession } from "@tanstack/react-start/server";
 import { createHash, timingSafeEqual } from "node:crypto";
 
 type AdminSession = { admin?: boolean };
@@ -7,11 +7,14 @@ type AdminSession = { admin?: boolean };
 function sessionConfig() {
   const password = process.env["ADMIN_SESSION_SECRET"];
   if (!password) throw new Error("ADMIN_SESSION_SECRET is not configured");
+  // Secure cookies are required in production, but browsers do not send them
+  // over the HTTP localhost origin used by the local preview.
+  const secure = getRequestUrl().protocol === "https:";
   return {
     password,
     name: "site-admin",
     maxAge: 60 * 60 * 12,
-    cookie: { httpOnly: true, secure: true, sameSite: "lax" as const, path: "/" },
+    cookie: { httpOnly: true, secure, sameSite: "lax" as const, path: "/" },
   };
 }
 

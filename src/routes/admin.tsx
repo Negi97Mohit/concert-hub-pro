@@ -94,7 +94,14 @@ function AdminPage() {
     if (!authed) return;
     void load()
       .then((r) => setContent(mergeContent(JSON.parse(r.json))))
-      .catch((e) => setMessage(e instanceof Error ? e.message : "Could not load site content"));
+      .catch((e) => {
+        if (e instanceof Error && e.message.includes("Unauthorized")) {
+          setAuthed(false);
+          setError("Your admin session expired. Please sign in again.");
+          return;
+        }
+        setMessage(e instanceof Error ? e.message : "Could not load site content");
+      });
   }, [authed, load]);
 
   const patch = <K extends keyof SiteContent>(key: K, value: SiteContent[K]) =>
